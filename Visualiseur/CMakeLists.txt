@@ -1,0 +1,13 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+
+PROJECT(Visualiseur)
+FIND_PACKAGE(VTK REQUIRED)
+#INCLUDE(${VTK_USE_FILE} )
+ADD_EXECUTABLE(Visualiseur Visualiseur.cpp )
+
+TARGET_LINK_LIBRARIES( Visualiseur ${VTK_LIBRARIES} )
+
+vtk_module_autoinit(
+	TARGETS Visualiseur
+	MODULES ${VTK_LIBRARIES}
+)
